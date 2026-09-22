@@ -1,0 +1,47 @@
+[
+  {
+    "id": "TX-10024",
+    "date": "2026-03-15T14:22:00Z",
+    "customer": { "name": "Alice Johnson", "email": "alice.j@example.com" },
+    "category": "Electronics",
+    "product": "Wireless Headphones",
+    "amount": 129.99,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10025",
+    "date": "2026-03-16T09:11:00Z",
+    "customer": { "name": "Bruno Silva", "email": "bruno.s@example.com" },
+    "category": "Home & Kitchen",
+    "product": "Smart Coffee Maker",
+    "amount": 89.50,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10026",
+    "date": "2026-03-16T18:45:00Z",
+    "customer": { "name": "Clara Ames", "email": "clara.a@example.com" },
+    "category": "Electronics",
+    "product": "Mechanical Keyboard",
+    "amount": 150.00,
+    "status": "refunded"
+  },
+  {
+    "id": "TX-10027",
+    "date": "2026-03-17T11:30:00Z",
+    "customer": { "name": "Alice Johnson", "email": "alice.j@example.com" },
+    "category": "Electronics",
+    "product": "Gaming Mouse",
+    "amount": 59.99,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10028",
+    "date": "2026-03-18T10:00:00Z",
+    "customer": { "name": "Diego Sousa", "email": "diego.s@example.com" },
+    "category": "Home & Kitchen",
+    "product": "Air Fryer",
+    "amount": 199.90,
+    "status": "completed"
+  }
+]
