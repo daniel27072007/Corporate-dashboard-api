@@ -28,7 +28,44 @@ function App() {
     return listOfUniqueClients.size
   }, [dataFiltred])
 
-  return <div></div>
+  return (
+    <div className="min-h-screen bg-gray-900 text-white p-8 flex flex-col gap-6">
+      
+      {/* 1. CABEÇALHO */}
+      <div>
+        <h1 className="text-3xl font-bold tracking-tight">Sales Dashboard</h1>
+        <p className="text-gray-400 text-sm">Visão geral de performance corporativa</p>
+      </div>
+
+      {/* 2. BARRA DE FILTROS (Vamos criar a lógica visual delas no próximo passo) */}
+      <div className="bg-gray-800 p-4 rounded-xl border border-gray-700 flex gap-4">
+        {/* Caixa de Busca Textual */}
+        <input
+          type="text"
+          placeholder="Search for client..."
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+          className="bg-gray-900 border border-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full md:w-80 text-sm"
+        />
+        {/* Selecao de categoria */}
+        <select
+          value={categorySelected}
+          onChange={(e) => setCategorySelected(e.target.value)}
+          className="bg-gray-900 border border-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full md:w-80 text-sm"
+        >
+          <option value="all">All Categories</option>
+          <option value="electronics">Electronics</option>
+          <option value="home & kitchen">Home & Kitchen</option>
+        </select>
+        {/* Contador de Resultados Filtrados */}
+        <span className="text-xs text-gray-400 self-center ml-auto">
+          Encontred results: <strong className="text-blue-400 text-sm font-bold">{dataFiltred.length}</strong>
+        </span>
+
+      </div>
+
+    </div>
+  )
 }
 
 export default App;
