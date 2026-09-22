@@ -1,2 +1,2 @@
 # Corporate-dashboard-api
-<!-- create repository -->
+<!-- create repository. -->
