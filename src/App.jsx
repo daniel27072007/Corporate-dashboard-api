@@ -1,4 +1,5 @@
 import { useState, useMemo, use } from "react";
+import { ResponsiveContainer, PieChart, Pie, Tooltip, Legend } from 'recharts'
 import salesData from './data/salesMock.json'
 
 function App() {
@@ -55,7 +56,27 @@ function App() {
     return dataOrdnaded.slice(indexStart, indexFinal)
   }, [dataOrdnaded, currentPage, itemsPerPage])
 
-
+  //rechart Category Distribution
+  const rechartCategoryData = useMemo(() => {
+    const maping = dataFiltred.reduce((acumulate, item) => {
+      if(item.status === "refunded"){
+        return acumulate
+      }
+      const categoryName = item.category;
+      if(!acumulate[categoryName]){
+        acumulate[categoryName] = 0
+      }
+      acumulate[categoryName] += item.amount
+      return acumulate
+    }, {})
+    return Object.keys(maping).map((category) => {
+      const totalValue = maping[category] || 0
+      return {
+        name: category,
+        value: Number(totalValue.toFixed(2)),
+      }
+    })
+  }, [dataFiltred])
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-8 flex flex-col gap-6">
@@ -211,6 +232,49 @@ function App() {
               Próximo
             </button>
           </div>
+        </div>
+
+      </div>
+      
+      {/* 5. SEÇÃO DE GRÁFICOS DINÂMICOS */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-4">
+        
+        {/* Card do Gráfico de Categorias */}
+        <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 flex flex-col gap-4">
+          <div>
+            <h2 className="text-lg font-bold text-white">Category Distribution</h2>
+            <p className="text-gray-400 text-xs">Faturamento consolidado por categoria de produto</p>
+          </div>
+
+          {/* Container Responsivo do Recharts */}
+          <div className="w-full h-64">
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={rechartCategoryData} // Sua lista de objetos { name, value }
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={60}
+                  outerRadius={80}
+                  paddingAngle={5}
+                  dataKey="value"
+                  // ATUALIZAÇÃO RECHARTS 4.0: Passamos as cores direto aqui!
+                  fill="#3b82f6" 
+                />
+                
+                <Tooltip 
+                  contentStyle={{ backgroundColor: "#1f2937", borderColor: "#374151", borderRadius: "8px" }}
+                  itemStyle={{ color: "#fff" }}
+                />
+                <Legend iconType="circle" wrapperStyle={{ fontSize: "12px" }} />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Espaço para o segundo gráfico solicitado pelo cliente futuramente */}
+        <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 flex items-center justify-center border-dashed text-gray-500 text-sm italic">
+          Sales Trend Chart (Gráfico de Tendência Temporal) ficará aqui.
         </div>
 
       </div>
