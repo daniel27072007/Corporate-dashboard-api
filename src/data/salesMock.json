@@ -1,47 +1,2402 @@
 [
   {
-    "id": "TX-10024",
-    "date": "2026-03-15T14:22:00Z",
-    "customer": { "name": "Alice Johnson", "email": "alice.j@example.com" },
+    "id": "TX-10001",
+    "date": "2026-02-01T08:14:22Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
     "category": "Electronics",
     "product": "Wireless Headphones",
-    "amount": 129.99,
+    "amount": 149.99,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10002",
+    "date": "2026-02-01T11:45:10Z",
+    "customer": {
+      "name": "Mariana Souza",
+      "email": "marianasouza@innovation.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Espresso Machine",
+    "amount": 289.50,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10003",
+    "date": "2026-02-02T09:30:00Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Mechanical Keyboard",
+    "amount": 110.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10004",
+    "date": "2026-02-02T14:12:45Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Smart Monitor 27",
+    "amount": 420.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10005",
+    "date": "2026-02-03T16:05:19Z",
+    "customer": {
+      "name": "Fernanda Costa",
+      "email": "f.costa@globalgroup.org"
+    },
+    "category": "Home & Kitchen",
+    "product": "Air Fryer XL",
+    "amount": 135.80,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10006",
+    "date": "2026-02-04T10:20:00Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "USB-C Docking Station",
+    "amount": 89.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10007",
+    "date": "2026-02-05T13:40:11Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Robot Vacuum",
+    "amount": 349.99,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10008",
+    "date": "2026-02-06T08:55:30Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Ergonomic Mouse",
+    "amount": 59.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10009",
+    "date": "2026-02-07T15:10:05Z",
+    "customer": {
+      "name": "Gabriel Santos",
+      "email": "gabriel.s@startups.co"
+    },
+    "category": "Electronics",
+    "product": "Bluetooth Speaker",
+    "amount": 79.99,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10010",
+    "date": "2026-02-08T11:00:00Z",
+    "customer": {
+      "name": "Mariana Souza",
+      "email": "marianasouza@innovation.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Blender High Speed",
+    "amount": 95.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10011",
+    "date": "2026-02-09T09:18:22Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "HD Webcam 1080p",
+    "amount": 65.50,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10012",
+    "date": "2026-02-10T17:42:10Z",
+    "customer": {
+      "name": "Juliana Rocha",
+      "email": "j.rocha@consulting.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Stand Mixer",
+    "amount": 260.00,
+    "status": "refunded"
+  },
+  {
+    "id": "TX-10013",
+    "date": "2026-02-11T12:05:40Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Noise Cancelling Earbuds",
+    "amount": 179.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10014",
+    "date": "2026-02-12T16:33:01Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "External SSD 1TB",
+    "amount": 129.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10015",
+    "date": "2026-02-13T10:14:55Z",
+    "customer": {
+      "name": "Rodrigo Alves",
+      "email": "ralves@logistics.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Electric Kettle",
+    "amount": 45.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10016",
+    "date": "2026-02-14T14:50:20Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Smartwatch V2",
+    "amount": 210.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10017",
+    "date": "2026-02-15T18:22:15Z",
+    "customer": {
+      "name": "Patricia Mendes",
+      "email": "pmendes@analytics.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Cookware Set 10pcs",
+    "amount": 199.99,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10018",
+    "date": "2026-02-16T09:05:10Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Wireless Charger Pad",
+    "amount": 35.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10019",
+    "date": "2026-02-17T11:40:00Z",
+    "customer": {
+      "name": "Fernanda Costa",
+      "email": "f.costa@globalgroup.org"
+    },
+    "category": "Home & Kitchen",
+    "product": "Coffee Grinder",
+    "amount": 55.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10020",
+    "date": "2026-02-18T15:25:30Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Power Bank 20000mAh",
+    "amount": 49.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10021",
+    "date": "2026-02-19T13:10:45Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Induction Cooktop",
+    "amount": 180.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10022",
+    "date": "2026-02-20T10:00:00Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Gaming Headset",
+    "amount": 99.99,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10023",
+    "date": "2026-02-21T16:45:12Z",
+    "customer": {
+      "name": "Gabriel Santos",
+      "email": "gabriel.s@startups.co"
+    },
+    "category": "Electronics",
+    "product": "Wi-Fi 6 Router",
+    "amount": 140.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10024",
+    "date": "2026-02-22T08:30:00Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Tablet Stand Adjustable",
+    "amount": 29.99,
     "status": "completed"
   },
   {
     "id": "TX-10025",
-    "date": "2026-03-16T09:11:00Z",
-    "customer": { "name": "Bruno Silva", "email": "bruno.s@example.com" },
+    "date": "2026-02-23T12:15:33Z",
+    "customer": {
+      "name": "Mariana Souza",
+      "email": "marianasouza@innovation.io"
+    },
     "category": "Home & Kitchen",
-    "product": "Smart Coffee Maker",
-    "amount": 89.50,
+    "product": "Toaster 4-Slice",
+    "amount": 62.00,
     "status": "completed"
   },
   {
     "id": "TX-10026",
-    "date": "2026-03-16T18:45:00Z",
-    "customer": { "name": "Clara Ames", "email": "clara.a@example.com" },
+    "date": "2026-02-24T14:00:00Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
     "category": "Electronics",
-    "product": "Mechanical Keyboard",
-    "amount": 150.00,
-    "status": "refunded"
+    "product": "USB Microphone",
+    "amount": 85.00,
+    "status": "completed"
   },
   {
     "id": "TX-10027",
-    "date": "2026-03-17T11:30:00Z",
-    "customer": { "name": "Alice Johnson", "email": "alice.j@example.com" },
+    "date": "2026-02-25T09:22:10Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
     "category": "Electronics",
-    "product": "Gaming Mouse",
-    "amount": 59.99,
+    "product": "Smart Home Hub",
+    "amount": 115.00,
     "status": "completed"
   },
   {
     "id": "TX-10028",
-    "date": "2026-03-18T10:00:00Z",
-    "customer": { "name": "Diego Sousa", "email": "diego.s@example.com" },
+    "date": "2026-02-26T17:10:05Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Portable Speaker Pro",
+    "amount": 160.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10029",
+    "date": "2026-02-27T11:05:40Z",
+    "customer": {
+      "name": "Juliana Rocha",
+      "email": "j.rocha@consulting.com"
+    },
     "category": "Home & Kitchen",
-    "product": "Air Fryer",
-    "amount": 199.90,
+    "product": "Slow Cooker",
+    "amount": 78.50,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10030",
+    "date": "2026-02-28T15:50:00Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Laptop Sleeve 15 inch",
+    "amount": 25.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10031",
+    "date": "2026-03-01T08:20:15Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "4K Action Camera",
+    "amount": 230.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10032",
+    "date": "2026-03-02T10:45:00Z",
+    "customer": {
+      "name": "Ana Clara Martins",
+      "email": "acmartins@designers.com"
+    },
+    "category": "Electronics",
+    "product": "Graphics Drawing Tablet",
+    "amount": 210.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10033",
+    "date": "2026-03-03T14:15:22Z",
+    "customer": {
+      "name": "Ana Clara Martins",
+      "email": "acmartins@designers.com"
+    },
+    "category": "Electronics",
+    "product": "Color Calibration Tool",
+    "amount": 175.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10034",
+    "date": "2026-03-04T09:00:10Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Desk Cable Manager",
+    "amount": 22.50,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10035",
+    "date": "2026-03-05T16:30:00Z",
+    "customer": {
+      "name": "Ana Clara Martins",
+      "email": "acmartins@designers.com"
+    },
+    "category": "Electronics",
+    "product": "Monitor Light Bar",
+    "amount": 69.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10036",
+    "date": "2026-03-06T11:20:45Z",
+    "customer": {
+      "name": "Fernanda Costa",
+      "email": "f.costa@globalgroup.org"
+    },
+    "category": "Home & Kitchen",
+    "product": "Juicer Extractor",
+    "amount": 112.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10037",
+    "date": "2026-03-07T13:05:00Z",
+    "customer": {
+      "name": "Ana Clara Martins",
+      "email": "acmartins@designers.com"
+    },
+    "category": "Electronics",
+    "product": "Ergonomic Chair Desk Pad",
+    "amount": 40.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10038",
+    "date": "2026-03-08T15:40:12Z",
+    "customer": {
+      "name": "Rodrigo Alves",
+      "email": "ralves@logistics.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Digital Kitchen Scale",
+    "amount": 24.99,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10039",
+    "date": "2026-03-09T10:10:00Z",
+    "customer": {
+      "name": "Ana Clara Martins",
+      "email": "acmartins@designers.com"
+    },
+    "category": "Electronics",
+    "product": "Mechanical Keyboard Switch Set",
+    "amount": 48.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10040",
+    "date": "2026-03-10T12:50:30Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Smart Plug Pack",
+    "amount": 39.99,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10041",
+    "date": "2026-03-11T08:40:00Z",
+    "customer": {
+      "name": "Ana Clara Martins",
+      "email": "acmartins@designers.com"
+    },
+    "category": "Electronics",
+    "product": "USB Hub 7-Port",
+    "amount": 45.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10042",
+    "date": "2026-03-12T17:15:20Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Air Purifier",
+    "amount": 210.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10043",
+    "date": "2026-03-13T14:00:10Z",
+    "customer": {
+      "name": "Ana Clara Martins",
+      "email": "acmartins@designers.com"
+    },
+    "category": "Electronics",
+    "product": "Stylus Pen Pro",
+    "amount": 99.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10044",
+    "date": "2026-03-14T09:25:00Z",
+    "customer": {
+      "name": "Gabriel Santos",
+      "email": "gabriel.s@startups.co"
+    },
+    "category": "Electronics",
+    "product": "External Hard Drive 2TB",
+    "amount": 85.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10045",
+    "date": "2026-03-15T11:10:40Z",
+    "customer": {
+      "name": "Ana Clara Martins",
+      "email": "acmartins@designers.com"
+    },
+    "category": "Electronics",
+    "product": "Dual Monitor Arm",
+    "amount": 120.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10046",
+    "date": "2026-03-16T16:05:00Z",
+    "customer": {
+      "name": "Mariana Souza",
+      "email": "marianasouza@innovation.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Sous Vide Cooker",
+    "amount": 149.00,
+    "status": "refunded"
+  },
+  {
+    "id": "TX-10047",
+    "date": "2026-03-17T13:30:25Z",
+    "customer": {
+      "name": "Ana Clara Martins",
+      "email": "acmartins@designers.com"
+    },
+    "category": "Electronics",
+    "product": "Noise Isolation Headphones",
+    "amount": 195.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10048",
+    "date": "2026-03-18T10:15:10Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Smart Thermostat",
+    "amount": 170.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10049",
+    "date": "2026-03-19T15:00:00Z",
+    "customer": {
+      "name": "Ana Clara Martins",
+      "email": "acmartins@designers.com"
+    },
+    "category": "Electronics",
+    "product": "Desk LED Lamp",
+    "amount": 52.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10050",
+    "date": "2026-03-20T12:20:05Z",
+    "customer": {
+      "name": "Patricia Mendes",
+      "email": "pmendes@analytics.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Food Processor",
+    "amount": 130.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10051",
+    "date": "2026-03-21T09:45:30Z",
+    "customer": {
+      "name": "Ana Clara Martins",
+      "email": "acmartins@designers.com"
+    },
+    "category": "Electronics",
+    "product": "Portable Monitor 15.6",
+    "amount": 220.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10052",
+    "date": "2026-03-22T14:10:00Z",
+    "customer": {
+      "name": "Juliana Rocha",
+      "email": "j.rocha@consulting.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Non-Stick Frying Pan",
+    "amount": 38.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10053",
+    "date": "2026-03-23T16:55:12Z",
+    "customer": {
+      "name": "Ana Clara Martins",
+      "email": "acmartins@designers.com"
+    },
+    "category": "Electronics",
+    "product": "Bluetooth Trackpad",
+    "amount": 89.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10054",
+    "date": "2026-03-24T11:00:00Z",
+    "customer": {
+      "name": "Rodrigo Alves",
+      "email": "ralves@logistics.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Coffee Maker Drip",
+    "amount": 65.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10055",
+    "date": "2026-03-25T08:35:40Z",
+    "customer": {
+      "name": "Ana Clara Martins",
+      "email": "acmartins@designers.com"
+    },
+    "category": "Electronics",
+    "product": "Wireless Presenter Remote",
+    "amount": 32.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10056",
+    "date": "2026-03-26T17:40:20Z",
+    "customer": {
+      "name": "Fernanda Costa",
+      "email": "f.costa@globalgroup.org"
+    },
+    "category": "Home & Kitchen",
+    "product": "Electric Grill Indoor",
+    "amount": 105.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10057",
+    "date": "2026-03-27T10:20:00Z",
+    "customer": {
+      "name": "Ana Clara Martins",
+      "email": "acmartins@designers.com"
+    },
+    "category": "Electronics",
+    "product": "Webcam Cover 3-Pack",
+    "amount": 20.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10058",
+    "date": "2026-03-28T13:15:05Z",
+    "customer": {
+      "name": "Gabriel Santos",
+      "email": "gabriel.s@startups.co"
+    },
+    "category": "Electronics",
+    "product": "Smart LED Strip Light",
+    "amount": 42.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10059",
+    "date": "2026-03-29T15:30:00Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Knife Set Block 6-Piece",
+    "amount": 110.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10060",
+    "date": "2026-03-30T09:10:45Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Surge Protector Power Strip",
+    "amount": 35.50,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10061",
+    "date": "2026-03-31T12:00:00Z",
+    "customer": {
+      "name": "Ana Clara Martins",
+      "email": "acmartins@designers.com"
+    },
+    "category": "Electronics",
+    "product": "Screen Cleaning Kit",
+    "amount": 21.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10062",
+    "date": "2026-04-01T08:15:30Z",
+    "customer": {
+      "name": "Roberto Dias",
+      "email": "roberto.dias@fintrade.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Espresso Machine",
+    "amount": 299.99,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10063",
+    "date": "2026-04-02T10:40:12Z",
+    "customer": {
+      "name": "Roberto Dias",
+      "email": "roberto.dias@fintrade.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Milk Frother Handheld",
+    "amount": 25.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10064",
+    "date": "2026-04-03T14:20:00Z",
+    "customer": {
+      "name": "Mariana Souza",
+      "email": "marianasouza@innovation.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Waffle Maker",
+    "amount": 48.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10065",
+    "date": "2026-04-04T09:05:45Z",
+    "customer": {
+      "name": "Roberto Dias",
+      "email": "roberto.dias@fintrade.com"
+    },
+    "category": "Electronics",
+    "product": "Noise Cancelling Earbuds",
+    "amount": 169.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10066",
+    "date": "2026-04-05T16:12:00Z",
+    "customer": {
+      "name": "Juliana Rocha",
+      "email": "j.rocha@consulting.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Toaster Oven Countertop",
+    "amount": 115.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10067",
+    "date": "2026-04-06T11:30:10Z",
+    "customer": {
+      "name": "Roberto Dias",
+      "email": "roberto.dias@fintrade.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Barista Coffee Beans 1kg",
+    "amount": 34.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10068",
+    "date": "2026-04-07T13:45:00Z",
+    "customer": {
+      "name": "Patricia Mendes",
+      "email": "pmendes@analytics.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Immersion Hand Blender",
+    "amount": 52.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10069",
+    "date": "2026-04-08T15:22:30Z",
+    "customer": {
+      "name": "Roberto Dias",
+      "email": "roberto.dias@fintrade.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Coffee Knock Box",
+    "amount": 22.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10070",
+    "date": "2026-04-09T10:00:00Z",
+    "customer": {
+      "name": "Fernanda Costa",
+      "email": "f.costa@globalgroup.org"
+    },
+    "category": "Home & Kitchen",
+    "product": "Digital Vacuum Sealer",
+    "amount": 88.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10071",
+    "date": "2026-04-10T12:15:40Z",
+    "customer": {
+      "name": "Roberto Dias",
+      "email": "roberto.dias@fintrade.com"
+    },
+    "category": "Electronics",
+    "product": "Smart Desk Clock",
+    "amount": 45.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10072",
+    "date": "2026-04-11T08:50:00Z",
+    "customer": {
+      "name": "Gabriel Santos",
+      "email": "gabriel.s@startups.co"
+    },
+    "category": "Electronics",
+    "product": "Wireless Trackball Mouse",
+    "amount": 75.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10073",
+    "date": "2026-04-12T17:05:15Z",
+    "customer": {
+      "name": "Roberto Dias",
+      "email": "roberto.dias@fintrade.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Glass Teapot with Infuser",
+    "amount": 32.50,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10074",
+    "date": "2026-04-13T14:30:00Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Electric Can Opener",
+    "amount": 28.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10075",
+    "date": "2026-04-14T09:10:20Z",
+    "customer": {
+      "name": "Roberto Dias",
+      "email": "roberto.dias@fintrade.com"
+    },
+    "category": "Electronics",
+    "product": "Bluetooth Audio Adapter",
+    "amount": 29.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10076",
+    "date": "2026-04-15T11:40:00Z",
+    "customer": {
+      "name": "Rodrigo Alves",
+      "email": "ralves@logistics.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Bread Maker Machine",
+    "amount": 165.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10077",
+    "date": "2026-04-16T16:00:00Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "4K HDMI Cable 3-Pack",
+    "amount": 24.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10078",
+    "date": "2026-04-17T13:25:10Z",
+    "customer": {
+      "name": "Mariana Souza",
+      "email": "marianasouza@innovation.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Ice Cream Maker",
+    "amount": 140.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10079",
+    "date": "2026-04-18T10:10:05Z",
+    "customer": {
+      "name": "Carlos Silva",
+      "email": "carlos.silva@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Vertical Mouse Ergonomic",
+    "amount": 64.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10080",
+    "date": "2026-04-19T15:45:30Z",
+    "customer": {
+      "name": "Juliana Rocha",
+      "email": "j.rocha@consulting.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Rice Cooker 10-Cup",
+    "amount": 79.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10081",
+    "date": "2026-04-20T12:30:00Z",
+    "customer": {
+      "name": "Gabriel Santos",
+      "email": "gabriel.s@startups.co"
+    },
+    "category": "Electronics",
+    "product": "Mechanical Numpad",
+    "amount": 39.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10082",
+    "date": "2026-04-21T08:20:12Z",
+    "customer": {
+      "name": "Fernanda Costa",
+      "email": "f.costa@globalgroup.org"
+    },
+    "category": "Home & Kitchen",
+    "product": "Electric Spice Grinder",
+    "amount": 30.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10083",
+    "date": "2026-04-22T17:10:00Z",
+    "customer": {
+      "name": "Patricia Mendes",
+      "email": "pmendes@analytics.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Cast Iron Skillet",
+    "amount": 58.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10084",
+    "date": "2026-04-23T14:05:40Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Meat Thermometer Digital",
+    "amount": 22.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10085",
+    "date": "2026-04-24T09:40:00Z",
+    "customer": {
+      "name": "Rodrigo Alves",
+      "email": "ralves@logistics.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Pasta Maker Machine",
+    "amount": 95.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10086",
+    "date": "2026-04-25T11:15:25Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Smart Door Lock",
+    "amount": 210.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10087",
+    "date": "2026-04-26T16:50:00Z",
+    "customer": {
+      "name": "Mariana Souza",
+      "email": "marianasouza@innovation.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Stand Mixer Bowl Shield",
+    "amount": 29.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10088",
+    "date": "2026-04-27T10:00:10Z",
+    "customer": {
+      "name": "Gabriel Santos",
+      "email": "gabriel.s@startups.co"
+    },
+    "category": "Electronics",
+    "product": "Webcam Tripod Stand",
+    "amount": 26.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10089",
+    "date": "2026-04-28T13:35:00Z",
+    "customer": {
+      "name": "Juliana Rocha",
+      "email": "j.rocha@consulting.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Electric Wine Opener",
+    "amount": 34.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10090",
+    "date": "2026-04-29T15:20:45Z",
+    "customer": {
+      "name": "Fernanda Costa",
+      "email": "f.costa@globalgroup.org"
+    },
+    "category": "Home & Kitchen",
+    "product": "Silicone Baking Mats",
+    "amount": 21.50,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10091",
+    "date": "2026-04-30T09:00:00Z",
+    "customer": {
+      "name": "Patricia Mendes",
+      "email": "pmendes@analytics.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Water Filter Pitcher",
+    "amount": 42.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10092",
+    "date": "2026-05-01T11:10:00Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Robot Vacuum Replacement Kit",
+    "amount": 45.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10093",
+    "date": "2026-05-02T14:30:15Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Dish Drying Rack Stainless",
+    "amount": 68.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10094",
+    "date": "2026-05-03T08:45:00Z",
+    "customer": {
+      "name": "Rodrigo Alves",
+      "email": "ralves@logistics.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Garbage Disposal Unit",
+    "amount": 185.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10095",
+    "date": "2026-05-04T16:20:10Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Handheld Steamer",
+    "amount": 55.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10096",
+    "date": "2026-05-05T10:05:00Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Smart Light Bulb 4-Pack",
+    "amount": 59.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10097",
+    "date": "2026-05-06T12:40:30Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Ceramic Tea Set",
+    "amount": 72.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10098",
+    "date": "2026-05-07T15:15:00Z",
+    "customer": {
+      "name": "Mariana Souza",
+      "email": "marianasouza@innovation.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "French Press Coffee Maker",
+    "amount": 39.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10099",
+    "date": "2026-05-08T09:30:20Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Bamboo Cutting Boards 3-Set",
+    "amount": 36.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10100",
+    "date": "2026-05-09T17:00:00Z",
+    "customer": {
+      "name": "Gabriel Santos",
+      "email": "gabriel.s@startups.co"
+    },
+    "category": "Electronics",
+    "product": "Computer Speakers 2.0",
+    "amount": 62.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10101",
+    "date": "2026-05-10T11:25:40Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Electric Salt and Pepper Grinders",
+    "amount": 38.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10102",
+    "date": "2026-05-11T13:50:00Z",
+    "customer": {
+      "name": "Juliana Rocha",
+      "email": "j.rocha@consulting.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Salad Spinner Large",
+    "amount": 29.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10103",
+    "date": "2026-05-12T08:10:05Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Stainless Steel Trash Can 50L",
+    "amount": 125.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10104",
+    "date": "2026-05-13T16:35:12Z",
+    "customer": {
+      "name": "Fernanda Costa",
+      "email": "f.costa@globalgroup.org"
+    },
+    "category": "Home & Kitchen",
+    "product": "Electric Pressure Cooker",
+    "amount": 145.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10105",
+    "date": "2026-05-14T10:15:00Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Over the Sink Colander",
+    "amount": 24.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10106",
+    "date": "2026-05-15T14:40:30Z",
+    "customer": {
+      "name": "Patricia Mendes",
+      "email": "pmendes@analytics.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Spice Rack Organizer 20-Jar",
+    "amount": 54.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10107",
+    "date": "2026-05-16T12:00:00Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Non-Stick Baking Sheet Set",
+    "amount": 32.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10108",
+    "date": "2026-05-17T09:20:10Z",
+    "customer": {
+      "name": "Rodrigo Alves",
+      "email": "ralves@logistics.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Citrus Juicer Press",
+    "amount": 46.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10109",
+    "date": "2026-05-18T17:10:00Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Glass Meal Prep Containers",
+    "amount": 49.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10110",
+    "date": "2026-05-19T11:45:00Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Smart Video Doorbell",
+    "amount": 189.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10111",
+    "date": "2026-05-20T15:30:25Z",
+    "customer": {
+      "name": "Beatriz Lima",
+      "email": "blima@solutions.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Digital Food Scale Stainless",
+    "amount": 27.50,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10112",
+    "date": "2026-05-21T08:50:00Z",
+    "customer": {
+      "name": "Mariana Souza",
+      "email": "marianasouza@innovation.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Cold Brew Coffee Maker",
+    "amount": 35.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10113",
+    "date": "2026-05-22T13:12:40Z",
+    "customer": {
+      "name": "Juliana Rocha",
+      "email": "j.rocha@consulting.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Silicone Utensil Set 12pcs",
+    "amount": 41.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10114",
+    "date": "2026-05-23T10:00:00Z",
+    "customer": {
+      "name": "Gabriel Santos",
+      "email": "gabriel.s@startups.co"
+    },
+    "category": "Electronics",
+    "product": "HDMI Switch 4-Port",
+    "amount": 34.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10115",
+    "date": "2026-05-24T16:25:10Z",
+    "customer": {
+      "name": "Fernanda Costa",
+      "email": "f.costa@globalgroup.org"
+    },
+    "category": "Home & Kitchen",
+    "product": "Electric Knife Sharpener",
+    "amount": 58.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10116",
+    "date": "2026-05-25T12:05:00Z",
+    "customer": {
+      "name": "Patricia Mendes",
+      "email": "pmendes@analytics.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Under Sink Organizer 2-Tier",
+    "amount": 38.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10117",
+    "date": "2026-05-26T09:15:30Z",
+    "customer": {
+      "name": "Rodrigo Alves",
+      "email": "ralves@logistics.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Mortar and Pestle Granite",
+    "amount": 33.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10118",
+    "date": "2026-05-27T14:45:00Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Smart Water Leak Detector",
+    "amount": 45.00,
+    "status": "refunded"
+  },
+  {
+    "id": "TX-10119",
+    "date": "2026-05-28T11:20:05Z",
+    "customer": {
+      "name": "Mariana Souza",
+      "email": "marianasouza@innovation.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Pour Over Coffee Carafe",
+    "amount": 29.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10120",
+    "date": "2026-05-29T17:35:12Z",
+    "customer": {
+      "name": "Juliana Rocha",
+      "email": "j.rocha@consulting.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Air Fryer Parchment Liners",
+    "amount": 18.50,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10121",
+    "date": "2026-05-30T10:10:00Z",
+    "customer": {
+      "name": "Gabriel Santos",
+      "email": "gabriel.s@startups.co"
+    },
+    "category": "Electronics",
+    "product": "Ethernet Cable Cat8 50ft",
+    "amount": 28.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10122",
+    "date": "2026-05-31T13:00:00Z",
+    "customer": {
+      "name": "Fernanda Costa",
+      "email": "f.costa@globalgroup.org"
+    },
+    "category": "Home & Kitchen",
+    "product": "Insulated Travel Mug",
+    "amount": 26.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10123",
+    "date": "2026-06-01T08:30:15Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Smart Monitor 32 4K",
+    "amount": 499.99,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10124",
+    "date": "2026-06-02T10:15:00Z",
+    "customer": {
+      "name": "Patricia Mendes",
+      "email": "pmendes@analytics.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Espresso Machine Pro",
+    "amount": 450.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10125",
+    "date": "2026-06-03T14:50:22Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Thunderbolt 4 Hub",
+    "amount": 240.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10126",
+    "date": "2026-06-04T09:12:00Z",
+    "customer": {
+      "name": "Gabriel Santos",
+      "email": "gabriel.s@startups.co"
+    },
+    "category": "Electronics",
+    "product": "Curved Gaming Monitor",
+    "amount": 380.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10127",
+    "date": "2026-06-05T16:05:40Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Wireless Mechanical Keyboard",
+    "amount": 160.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10128",
+    "date": "2026-06-06T11:40:10Z",
+    "customer": {
+      "name": "Rodrigo Alves",
+      "email": "ralves@logistics.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Automatic Espresso Grinder",
+    "amount": 220.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10129",
+    "date": "2026-06-07T13:10:00Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Noise Cancelling Headphones Pro",
+    "amount": 320.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10130",
+    "date": "2026-06-08T15:25:30Z",
+    "customer": {
+      "name": "Juliana Rocha",
+      "email": "j.rocha@consulting.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Robot Vacuum & Mop Combo",
+    "amount": 480.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10131",
+    "date": "2026-06-09T10:00:00Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Webcam 4K Ultra HD",
+    "amount": 199.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10132",
+    "date": "2026-06-10T12:45:15Z",
+    "customer": {
+      "name": "Mariana Souza",
+      "email": "marianasouza@innovation.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Smart Oven Countertop",
+    "amount": 290.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10133",
+    "date": "2026-06-11T08:20:00Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Standing Desk Converter",
+    "amount": 210.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10134",
+    "date": "2026-06-12T17:15:40Z",
+    "customer": {
+      "name": "Fernanda Costa",
+      "email": "f.costa@globalgroup.org"
+    },
+    "category": "Home & Kitchen",
+    "product": "Blender Professional 1500W",
+    "amount": 230.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10135",
+    "date": "2026-06-13T14:00:10Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Mesh Wi-Fi System 3-Pack",
+    "amount": 310.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10136",
+    "date": "2026-06-14T09:35:00Z",
+    "customer": {
+      "name": "Gabriel Santos",
+      "email": "gabriel.s@startups.co"
+    },
+    "category": "Electronics",
+    "product": "Portable Projector 1080p",
+    "amount": 280.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10137",
+    "date": "2026-06-15T11:50:25Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "NAS Storage Enclosure 2-Bay",
+    "amount": 260.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10138",
+    "date": "2026-06-16T16:10:00Z",
+    "customer": {
+      "name": "Patricia Mendes",
+      "email": "pmendes@analytics.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Air Purifier HEPA Large Room",
+    "amount": 270.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10139",
+    "date": "2026-06-17T13:25:30Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Smart Security Camera Kit",
+    "amount": 225.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10140",
+    "date": "2026-06-18T10:05:00Z",
+    "customer": {
+      "name": "Rodrigo Alves",
+      "email": "ralves@logistics.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Wine Cooler Refrigerator 12-Bottle",
+    "amount": 340.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10141",
+    "date": "2026-06-19T15:40:12Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Graphics Card Support Bracket",
+    "amount": 29.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10142",
+    "date": "2026-06-20T12:15:00Z",
+    "customer": {
+      "name": "Juliana Rocha",
+      "email": "j.rocha@consulting.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Sous Vide Water Oven",
+    "amount": 215.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10143",
+    "date": "2026-06-21T08:45:30Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "USB C Fast Charger 100W",
+    "amount": 65.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10144",
+    "date": "2026-06-22T17:00:00Z",
+    "customer": {
+      "name": "Mariana Souza",
+      "email": "marianasouza@innovation.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Stand Mixer Pasta Attachment",
+    "amount": 110.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10145",
+    "date": "2026-06-23T14:20:10Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Bluetooth Conference Speaker",
+    "amount": 149.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10146",
+    "date": "2026-06-24T09:10:00Z",
+    "customer": {
+      "name": "Fernanda Costa",
+      "email": "f.costa@globalgroup.org"
+    },
+    "category": "Home & Kitchen",
+    "product": "Electric Dehydrator Food",
+    "amount": 125.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10147",
+    "date": "2026-06-25T11:35:45Z",
+    "customer": {
+      "name": "Gabriel Santos",
+      "email": "gabriel.s@startups.co"
+    },
+    "category": "Electronics",
+    "product": "Drawing Tablet Wireless",
+    "amount": 185.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10148",
+    "date": "2026-06-26T16:50:00Z",
+    "customer": {
+      "name": "Patricia Mendes",
+      "email": "pmendes@analytics.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Countertop Ice Maker",
+    "amount": 159.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10149",
+    "date": "2026-06-27T10:30:20Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Smart IR Remote Control",
+    "amount": 25.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10150",
+    "date": "2026-06-28T13:15:00Z",
+    "customer": {
+      "name": "Rodrigo Alves",
+      "email": "ralves@logistics.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Induction Burner Portable",
+    "amount": 75.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10151",
+    "date": "2026-06-29T15:00:00Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Monitor Desk Mount Dual",
+    "amount": 135.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10152",
+    "date": "2026-06-30T09:40:12Z",
+    "customer": {
+      "name": "Juliana Rocha",
+      "email": "j.rocha@consulting.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Electric Tea Kettle Temp Control",
+    "amount": 68.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10153",
+    "date": "2026-07-01T08:10:00Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Kitchen Trash Can Motion Sensor",
+    "amount": 95.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10154",
+    "date": "2026-07-02T10:45:30Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Dishwasher Portable Countertop",
+    "amount": 310.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10155",
+    "date": "2026-07-03T14:15:00Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Silicone Sponge 4-Pack",
+    "amount": 15.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10156",
+    "date": "2026-07-04T09:00:20Z",
+    "customer": {
+      "name": "Mariana Souza",
+      "email": "marianasouza@innovation.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Cold Press Juicer",
+    "amount": 210.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10157",
+    "date": "2026-07-05T16:30:10Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Over Sink Drying Rack",
+    "amount": 55.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10158",
+    "date": "2026-07-06T11:20:00Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Stainless Steel Cookware Set 12pc",
+    "amount": 280.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10159",
+    "date": "2026-07-07T13:05:45Z",
+    "customer": {
+      "name": "Fernanda Costa",
+      "email": "f.costa@globalgroup.org"
+    },
+    "category": "Home & Kitchen",
+    "product": "Electric Knife Sharpener Professional",
+    "amount": 89.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10160",
+    "date": "2026-07-08T15:40:00Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Cutting Board Oil",
+    "amount": 18.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10161",
+    "date": "2026-07-09T10:10:15Z",
+    "customer": {
+      "name": "Gabriel Santos",
+      "email": "gabriel.s@startups.co"
+    },
+    "category": "Electronics",
+    "product": "USB C Hub Multiport Adapter",
+    "amount": 49.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10162",
+    "date": "2026-07-10T12:50:00Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Pantry Storage Containers 12-Pack",
+    "amount": 62.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10163",
+    "date": "2026-07-11T08:35:30Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Refrigerator Organizer Bins",
+    "amount": 34.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10164",
+    "date": "2026-07-12T17:10:00Z",
+    "customer": {
+      "name": "Patricia Mendes",
+      "email": "pmendes@analytics.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Electric Ice Crusher",
+    "amount": 48.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10165",
+    "date": "2026-07-13T14:00:05Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Spice Spinner Lazy Susan",
+    "amount": 22.50,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10166",
+    "date": "2026-07-14T09:25:40Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Computer Soundbar Speaker",
+    "amount": 79.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10167",
+    "date": "2026-07-15T11:15:00Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Oil Dispenser Bottle Glass",
+    "amount": 19.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10168",
+    "date": "2026-07-16T16:00:20Z",
+    "customer": {
+      "name": "Rodrigo Alves",
+      "email": "ralves@logistics.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Manual Pasta Press",
+    "amount": 58.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10169",
+    "date": "2026-07-17T13:30:00Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Under Cabinet Paper Towel Holder",
+    "amount": 16.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10170",
+    "date": "2026-07-18T10:20:12Z",
+    "customer": {
+      "name": "Juliana Rocha",
+      "email": "j.rocha@consulting.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Digital Oven Thermometer",
+    "amount": 21.00,
+    "status": "refunded"
+  },
+  {
+    "id": "TX-10171",
+    "date": "2026-07-19T15:05:00Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Silicone Oven Mitts",
+    "amount": 24.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10172",
+    "date": "2026-07-20T12:40:35Z",
+    "customer": {
+      "name": "Gabriel Santos",
+      "email": "gabriel.s@startups.co"
+    },
+    "category": "Electronics",
+    "product": "Smart Cable Organizer Bag",
+    "amount": 27.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10173",
+    "date": "2026-07-21T08:55:00Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Fruit Bowl Stainless Steel",
+    "amount": 29.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10174",
+    "date": "2026-07-22T17:20:10Z",
+    "customer": {
+      "name": "Mariana Souza",
+      "email": "marianasouza@innovation.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Coffee Pod Holder Drawer",
+    "amount": 32.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10175",
+    "date": "2026-07-23T14:10:00Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Baking Measuring Spoons Set",
+    "amount": 14.50,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10176",
+    "date": "2026-07-24T09:30:22Z",
+    "customer": {
+      "name": "Fernanda Costa",
+      "email": "f.costa@globalgroup.org"
+    },
+    "category": "Home & Kitchen",
+    "product": "Electric Milk Steamer",
+    "amount": 54.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10177",
+    "date": "2026-07-25T11:45:00Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Jar Opener Grip Tool",
+    "amount": 12.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10178",
+    "date": "2026-07-26T16:15:05Z",
+    "customer": {
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@enterprise.net"
+    },
+    "category": "Electronics",
+    "product": "Bluetooth Keyboard Compact",
+    "amount": 48.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10179",
+    "date": "2026-07-27T10:00:00Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Kitchen Towels 6-Pack",
+    "amount": 22.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10180",
+    "date": "2026-07-28T13:25:40Z",
+    "customer": {
+      "name": "Patricia Mendes",
+      "email": "pmendes@analytics.io"
+    },
+    "category": "Home & Kitchen",
+    "product": "Ceramic Baking Dish",
+    "amount": 38.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10181",
+    "date": "2026-07-29T15:10:00Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Pot Protectors Set",
+    "amount": 15.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10182",
+    "date": "2026-07-30T09:05:30Z",
+    "customer": {
+      "name": "Rodrigo Alves",
+      "email": "ralves@logistics.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Meat Claws Shredder",
+    "amount": 16.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10183",
+    "date": "2026-07-31T18:00:00Z",
+    "customer": {
+      "name": "Vanessa Lima",
+      "email": "v.lima@retailcorp.com"
+    },
+    "category": "Home & Kitchen",
+    "product": "Kitchen Apron Heavy Duty",
+    "amount": 25.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10184",
+    "date": "2026-02-14T11:20:00Z",
+    "customer": {
+      "name": "Diego Ramos",
+      "email": "diego.ramos@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "USB Desk Fan",
+    "amount": 22.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10185",
+    "date": "2026-02-28T16:10:00Z",
+    "customer": {
+      "name": "Camila Torres",
+      "email": "camila.t@designstudio.com"
+    },
+    "category": "Electronics",
+    "product": "Mouse Pad XL RGB",
+    "amount": 29.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10186",
+    "date": "2026-03-08T10:45:00Z",
+    "customer": {
+      "name": "Diego Ramos",
+      "email": "diego.ramos@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "DisplayPort Cable 6ft",
+    "amount": 21.50,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10187",
+    "date": "2026-03-20T14:30:00Z",
+    "customer": {
+      "name": "Camila Torres",
+      "email": "camila.t@designstudio.com"
+    },
+    "category": "Electronics",
+    "product": "Ergonomic Wrist Rest",
+    "amount": 24.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10188",
+    "date": "2026-03-29T12:00:00Z",
+    "customer": {
+      "name": "Diego Ramos",
+      "email": "diego.ramos@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Memory Card Reader USB-C",
+    "amount": 27.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10189",
+    "date": "2026-04-10T16:40:00Z",
+    "customer": {
+      "name": "Camila Torres",
+      "email": "camila.t@designstudio.com"
+    },
+    "category": "Electronics",
+    "product": "Tablet Screen Protector",
+    "amount": 20.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10190",
+    "date": "2026-04-22T09:15:00Z",
+    "customer": {
+      "name": "Diego Ramos",
+      "email": "diego.ramos@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Ethernet Adapter USB-C",
+    "amount": 32.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10191",
+    "date": "2026-05-02T13:50:00Z",
+    "customer": {
+      "name": "Camila Torres",
+      "email": "camila.t@designstudio.com"
+    },
+    "category": "Electronics",
+    "product": "Laptop Stand Aluminum",
+    "amount": 45.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10192",
+    "date": "2026-05-15T10:30:00Z",
+    "customer": {
+      "name": "Diego Ramos",
+      "email": "diego.ramos@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Bluetooth Dongle 5.0",
+    "amount": 23.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10193",
+    "date": "2026-05-28T17:00:00Z",
+    "customer": {
+      "name": "Camila Torres",
+      "email": "camila.t@designstudio.com"
+    },
+    "category": "Electronics",
+    "product": "Ring Light 10-inch",
+    "amount": 39.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10194",
+    "date": "2026-06-04T11:15:00Z",
+    "customer": {
+      "name": "Diego Ramos",
+      "email": "diego.ramos@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Cable Management Sleeve",
+    "amount": 21.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10195",
+    "date": "2026-06-18T15:40:00Z",
+    "customer": {
+      "name": "Camila Torres",
+      "email": "camila.t@designstudio.com"
+    },
+    "category": "Electronics",
+    "product": "Wireless Charging Pad Dual",
+    "amount": 48.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10196",
+    "date": "2026-06-29T08:20:00Z",
+    "customer": {
+      "name": "Diego Ramos",
+      "email": "diego.ramos@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Smart Switch Wi-Fi 2-Pack",
+    "amount": 35.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10197",
+    "date": "2026-07-08T12:00:00Z",
+    "customer": {
+      "name": "Camila Torres",
+      "email": "camila.t@designstudio.com"
+    },
+    "category": "Electronics",
+    "product": "Headphone Desk Hanger",
+    "amount": 20.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10198",
+    "date": "2026-07-15T14:45:00Z",
+    "customer": {
+      "name": "Diego Ramos",
+      "email": "diego.ramos@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "USB C Extension Cable 6ft",
+    "amount": 22.90,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10199",
+    "date": "2026-07-22T10:10:00Z",
+    "customer": {
+      "name": "Camila Torres",
+      "email": "camila.t@designstudio.com"
+    },
+    "category": "Electronics",
+    "product": "Webcam Privacy Cover Metal",
+    "amount": 20.00,
+    "status": "completed"
+  },
+  {
+    "id": "TX-10200",
+    "date": "2026-07-30T16:50:00Z",
+    "customer": {
+      "name": "Diego Ramos",
+      "email": "diego.ramos@techcorp.com"
+    },
+    "category": "Electronics",
+    "product": "Mini Bluetooth Speaker",
+    "amount": 34.00,
     "status": "completed"
   }
 ]
