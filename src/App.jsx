@@ -7,6 +7,7 @@ function App() {
   const [categorySelected, setCategorySelected] = useState("all")
   const [dateFirst, setDateFirst] = useState("")
   const [dateLast, setDateLast] = useState("")
+  // () => new Date().toLocaleDateString('sv-SE')
 
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 3 
@@ -39,9 +40,40 @@ function App() {
     return listOfUniqueClients.size
   }, [dataFiltred])
 
-  const last30DaysRevenue = useMemo(() => {
-    const totalLast30Days = 
-  }, [dataFiltred])
+  const revenueComparison = useMemo(() => {
+    if (!dateFirst || !dateLast) return null
+    const currentStart = new Date(dateFirst + "T00:00:00").getTime()
+    const currentEnd = new Date(dateLast + "T23:59:59").getTime()
+    if (isNaN(currentStart) || isNaN(currentEnd)) return null
+
+    const millisecondsInDay = 1000 * 60 * 60 * 24
+    const totalDays = Math.floor(Math.abs(currentEnd - currentStart) / millisecondsInDay)
+    const periodDuration = currentEnd - currentStart
+    const pastStart = currentStart - periodDuration - 1000
+    const pastEnd = currentStart - 1000
+
+    const currentRevenue = totalRevenue
+    const pastRevenue = salesData.reduce((acumulate, item) => {
+      const filtredBySearch = item.customer.name.toLowerCase().includes(searchText.toLowerCase())
+      const filtredByCategory = categorySelected === 'all' || item.category.toLowerCase().includes(categorySelected.toLowerCase())
+      const itemTime = new Date(item.date).getTime()
+      const insidePastPeriod = itemTime >= pastStart && itemTime <= pastEnd
+
+      if(filtredBySearch && filtredByCategory && insidePastPeriod){
+        return acumulate += item.amount
+      }
+      return acumulate
+    }, 0)
+
+    const diff = currentRevenue - pastRevenue
+    const percentage = pastRevenue > 0 ? (diff / pastRevenue) * 100 : 0
+
+    return {
+      days: totalDays,
+      percentage: Math.abs(percentage).toFixed(1),
+      isPositive: diff >= 0
+    }
+  }, [dataFiltred, dateFirst, dateLast, searchText, categorySelected])
 
   //dataTableLogic
   const dataOrdnaded = useMemo(()=>{
@@ -155,8 +187,14 @@ function App() {
           <strong className="text-2xl font-bold text-white">
             ${totalRevenue.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
           </strong>
-          <span className="text-xs text-green-400 font-medium mt-1">▲ +12% vs last 30 days</span>
-          <span className="text-xs text-red-400 font-medium mt-1">▼ +12% vs last 30 days</span>
+          {revenueComparison ? (
+            <span className={`text-xs font-medium mt-1 ${revenueComparison.isPositive ? 'text-green-400' : 'text-red-400'}`}>
+              {revenueComparison.isPositive ? '▲' : '▼'} {revenueComparison.percentage}% 
+              <span className="text-gray-500"> vs last {revenueComparison.days} days</span>
+            </span>
+          ) : (
+            <span className="text-xs text-gray-500 italic mt-1">Select a period to see its revenue comparison</span>
+          )}
         </div>
 
         {/* Cartão 2: Quantidade de Vendas */}
