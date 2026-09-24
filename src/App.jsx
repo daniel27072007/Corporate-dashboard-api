@@ -5,6 +5,8 @@ import salesData from './data/salesMock.json'
 function App() {
   const [searchText, setSearchText] = useState("")
   const [categorySelected, setCategorySelected] = useState("all")
+  const [dateFirst, setDateFirst] = useState("")
+  const [dateLast, setDateLast] = useState("")
 
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 3 
@@ -16,9 +18,12 @@ function App() {
     return salesData.filter((item) => {
       const filtredBySearch = item.customer.name.toLowerCase().includes(searchText.toLowerCase())
       const filtredByCategory = categorySelected === 'all' || item.category.toLowerCase().includes(categorySelected.toLowerCase())
-      return filtredBySearch && filtredByCategory
+      const itemDateString = item.date.substring(0,10)
+      const filtredByDateFirst = !dateFirst || itemDateString >= dateFirst
+      const filtredByDateLast = !dateLast || itemDateString <= dateLast
+      return filtredBySearch && filtredByCategory && filtredByDateFirst && filtredByDateLast
     })
-  }, [searchText, categorySelected])
+  }, [searchText, categorySelected, dateFirst, dateLast])
 
   //metrics
   const totalRevenue = useMemo(() => {
@@ -57,6 +62,7 @@ function App() {
   }, [dataOrdnaded, currentPage, itemsPerPage])
 
   //rechart Category Distribution
+  const paleteColours = [ 'rgb(6, 101, 196)', 'rgb(58, 148, 252)' ]
   const rechartCategoryData = useMemo(() => {
     const maping = dataFiltred.reduce((acumulate, item) => {
       if(item.status === "refunded"){
@@ -69,14 +75,22 @@ function App() {
       acumulate[categoryName] += item.amount
       return acumulate
     }, {})
-    return Object.keys(maping).map((category) => {
+    return Object.keys(maping).map((category, index) => {
       const totalValue = maping[category] || 0
       return {
         name: category,
         value: Number(totalValue.toFixed(2)),
+        fill: paleteColours[index % paleteColours.length]
       }
     })
   }, [dataFiltred])
+
+  const formatMoney = (value) => {
+    return new Intl.NumberFormat('pt-BR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(value);
+  };  
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-8 flex flex-col gap-6">
@@ -88,25 +102,40 @@ function App() {
       </div>
 
       {/* 2. BARRA DE FILTROS (Vamos criar a lógica visual delas no próximo passo) */}
-      <div className="bg-gray-800 p-4 rounded-xl border border-gray-700 flex gap-4">
-        {/* Caixa de Busca Textual */}
+      <div className="bg-gray-800 p-4 rounded-xl border border-gray-700 flex flex-wrap gap-4 w-full">
+        <div className="flex justify-between items-center gap-4">
+          {/* Caixa de Busca Textual */}
+          <input
+            type="text"
+            placeholder="Search for client..."
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            className="bg-gray-900 border border-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full text-sm h-10"
+          />
+          {/* Selecao de categoria */}
+          <select
+            value={categorySelected}
+            onChange={(e) => setCategorySelected(e.target.value)}
+            className="bg-gray-900 border border-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full text-sm h-10"
+          >
+            <option value="all">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="home & kitchen">Home & Kitchen</option>
+          </select>
+        </div>
+        {/* Seleção de data */}
         <input
-          type="text"
-          placeholder="Search for client..."
-          value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
-          className="bg-gray-900 border border-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full md:w-80 text-sm"
+          type="date"
+          value={dateFirst}
+          onChange={(e) => setDateFirst(e.target.value)}
+          className="bg-gray-900 border border-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full text-sm h-10"
         />
-        {/* Selecao de categoria */}
-        <select
-          value={categorySelected}
-          onChange={(e) => setCategorySelected(e.target.value)}
-          className="bg-gray-900 border border-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full md:w-80 text-sm"
-        >
-          <option value="all">All Categories</option>
-          <option value="electronics">Electronics</option>
-          <option value="home & kitchen">Home & Kitchen</option>
-        </select>
+        <input
+          type="date"
+          value={dateLast}
+          onChange={(e) => setDateLast(e.target.value)}
+          className="bg-gray-900 border border-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full text-sm h-10"
+        />
         {/* Contador de Resultados Filtrados */}
         <span className="text-xs text-gray-400 self-center ml-auto">
           Encontred results: <strong className="text-blue-400 text-sm font-bold">{dataFiltred.length}</strong>
@@ -251,20 +280,19 @@ function App() {
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
-                  data={rechartCategoryData} // Sua lista de objetos { name, value }
+                  data={rechartCategoryData} // Sua lista de objetos { name, value, fill }
                   cx="50%"
                   cy="50%"
                   innerRadius={60}
                   outerRadius={80}
                   paddingAngle={5}
                   dataKey="value"
-                  // ATUALIZAÇÃO RECHARTS 4.0: Passamos as cores direto aqui!
-                  fill="#3b82f6" 
                 />
                 
                 <Tooltip 
                   contentStyle={{ backgroundColor: "#1f2937", borderColor: "#374151", borderRadius: "8px" }}
                   itemStyle={{ color: "#fff" }}
+                  formatter={(value) => [`$ ${formatMoney(value)}`]}
                 />
                 <Legend iconType="circle" wrapperStyle={{ fontSize: "12px" }} />
               </PieChart>
