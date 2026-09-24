@@ -39,6 +39,10 @@ function App() {
     return listOfUniqueClients.size
   }, [dataFiltred])
 
+  const last30DaysRevenue = useMemo(() => {
+    const totalLast30Days = 
+  }, [dataFiltred])
+
   //dataTableLogic
   const dataOrdnaded = useMemo(()=>{
     return [...dataFiltred].sort((a,b) => {
@@ -151,7 +155,8 @@ function App() {
           <strong className="text-2xl font-bold text-white">
             ${totalRevenue.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
           </strong>
-          {/* <span className="text-xs text-green-400 font-medium mt-1">▲ +12% vs last month</span> */}
+          <span className="text-xs text-green-400 font-medium mt-1">▲ +12% vs last 30 days</span>
+          <span className="text-xs text-red-400 font-medium mt-1">▼ +12% vs last 30 days</span>
         </div>
 
         {/* Cartão 2: Quantidade de Vendas */}
