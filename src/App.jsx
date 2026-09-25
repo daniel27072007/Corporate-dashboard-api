@@ -187,12 +187,14 @@ function App() {
   };  
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8 flex flex-col gap-6">
+    <div className={`min-h-screen p-8 flex flex-col gap-6 transition-colors duration-300 ${
+      darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'
+    }`}>
       
       {/* 1. CABEÇALHO */}
       <div className="flex justify-between items-center w-full">
         <div>
-          <h1 className={`text-3xl font-bold tracking-tight transition-colors ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h1 className={`text-3xl font-bold tracking-tight transition-colors ${darkMode ? 'text-white' : 'text-indigo-600'}`}>
             Sales Dashboard
           </h1>
           <p className={`transition-colors ${darkMode ? 'text-gray-400' : 'text-gray-500'} text-sm`}>
@@ -206,16 +208,16 @@ function App() {
           className={`p-2.5 rounded-lg border transition-all cursor-pointer flex items-center gap-2 text-sm font-medium ${
             darkMode
               ? "bg-gray-800 border-gray-700 text-yellow-400 hover:text-yellow-300"
-              : "bg-white border-gray-200 text-indigo-600 hover:bg-gray-50 shadow-xs"
+              : "bg-white border-blue-700 text-indigo-600 hover:bg-gray-50 shadow-xs"
           }`}
         >
           {darkMode ? (
             <>
-              <span>☀️</span> Light Mode
+              <span>Light Mode</span>
             </>
           ) : (
             <>
-              <span>🌙</span> Dark Mode
+              <span>Dark Mode</span> 
             </>
           )}
         </button>
@@ -223,7 +225,11 @@ function App() {
 
 
       {/* 2. BARRA DE FILTROS (Vamos criar a lógica visual delas no próximo passo) */}
-      <div className="bg-gray-800 p-4 rounded-xl border border-gray-700 flex flex-wrap gap-4 w-full">
+      <div className={`p-4 rounded-xl border flex flex-wrap gap-4 w-full transition-all ${
+        darkMode 
+          ? 'bg-gray-800 border-gray-700 shadow-none' 
+          : 'bg-white border-blue-700 shadow-xs'
+      }`}>
         <div className="flex justify-between items-center gap-4">
           {/* Caixa de Busca Textual */}
           <input
@@ -231,13 +237,17 @@ function App() {
             placeholder="Search for client..."
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
-            className="bg-gray-900 border border-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full text-sm h-10"
+            className={`border px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full text-sm h-10 transition-colors ${
+              darkMode ? 'bg-gray-900 border-gray-700 text-white' : 'bg-gray-50 border-blue-700 text-gray-900'
+            }`}
           />
           {/* Selecao de categoria */}
           <select
             value={categorySelected}
             onChange={(e) => setCategorySelected(e.target.value)}
-            className="bg-gray-900 border border-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full text-sm h-10"
+            className={`border px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full text-sm h-10 transition-colors ${
+              darkMode ? 'bg-gray-900 border-gray-700 text-white' : 'bg-gray-50 border-blue-700 text-gray-900'
+            }`}
           >
             <option value="all">All Categories</option>
             <option value="electronics">Electronics</option>
@@ -249,17 +259,21 @@ function App() {
           type="date"
           value={dateFirst}
           onChange={(e) => setDateFirst(e.target.value)}
-          className="bg-gray-900 border border-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full text-sm h-10"
+          className={`border px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full text-sm h-10 transition-colors ${
+            darkMode ? 'bg-gray-900 border-gray-700 text-white' : 'bg-gray-50 border-blue-700 text-gray-900'
+          }`}
         />
         <input
           type="date"
           value={dateLast}
           onChange={(e) => setDateLast(e.target.value)}
-          className="bg-gray-900 border border-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full text-sm h-10"
+          className={`border px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 w-full text-sm h-10 transition-colors ${
+            darkMode ? 'bg-gray-900 border-gray-700 text-white' : 'bg-gray-50 border-blue-700 text-gray-900'
+          }`}
         />
         {/* Contador de Resultados Filtrados */}
         <span className="text-xs text-gray-400 self-center ml-auto">
-          Encontred results: <strong className="text-blue-400 text-sm font-bold">{dataFiltred.length}</strong>
+          Encontred results: <strong className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-indigo-600'}`}>{dataFiltred.length}</strong>
         </span>
       </div>
 
@@ -267,9 +281,13 @@ function App() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         
         {/* Cartão 1: Faturamento Total */}
-        <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 flex flex-col gap-1">
-          <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Total Revenue</span>
-          <strong className="text-2xl font-bold text-white">
+        <div className={`p-6 rounded-xl border flex flex-col gap-1 transition-all duration-300 ${
+          darkMode 
+            ? 'bg-gray-800 border-gray-700 text-white' 
+            : 'bg-white border-blue-700 text-gray-900 shadow-xs'
+        }`}>
+         <span className={`text-xs font-semibold uppercase tracking-wider ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Total Revenue</span>
+          <strong className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             ${totalRevenue.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
           </strong>
           {revenueComparison ? (
@@ -283,56 +301,82 @@ function App() {
         </div>
 
         {/* Cartão 2: Quantidade de Vendas */}
-        <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 flex flex-col gap-1">
-          <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Total Sales Count</span>
-          <strong className="text-2xl font-bold text-white">{totalSalesCount}</strong>
+        <div className={`p-6 rounded-xl border flex flex-col gap-1 transition-all duration-300 ${
+          darkMode 
+            ? 'bg-gray-800 border-gray-700 text-white' 
+            : 'bg-white border-blue-700 text-gray-900 shadow-xs'
+        }`}>
+         <span className={`text-xs font-semibold uppercase tracking-wider ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Total Sales Count</span>
+          <strong className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{totalSalesCount}</strong>
           <span className="text-xs text-gray-500 mt-1">Transações concluídas</span>
         </div>
 
         {/* Cartão 3: Ticket Médio (AOV) */}
-        <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 flex flex-col gap-1">
-          <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Average Order Value</span>
-          <strong className="text-2xl font-bold text-white">
+        <div className={`p-6 rounded-xl border flex flex-col gap-1 transition-all duration-300 ${
+          darkMode 
+            ? 'bg-gray-800 border-gray-700 text-white' 
+            : 'bg-white border-blue-700 text-gray-900 shadow-xs'
+        }`}>
+         <span className={`text-xs font-semibold uppercase tracking-wider ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Average Order Value</span>
+          <strong className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             ${avarageOrderValue.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
           </strong>
           <span className="text-xs text-gray-500 mt-1">Média por transação</span>
         </div>
 
         {/* Cartão 4: Clientes Ativos */}
-        <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 flex flex-col gap-1">
-          <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Active Customers</span>
-          <strong className="text-2xl font-bold text-white">{activeCostumersCount}</strong>
+        <div className={`p-6 rounded-xl border flex flex-col gap-1 transition-all duration-300 ${
+          darkMode 
+            ? 'bg-gray-800 border-gray-700 text-white' 
+            : 'bg-white border-blue-700 text-gray-900 shadow-xs'
+        }`}>
+         <span className={`text-xs font-semibold uppercase tracking-wider ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Active Customers</span>
+          <strong className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{activeCostumersCount}</strong>
           <span className="text-xs text-blue-400 font-medium mt-1">Compradores únicos</span>
         </div>
 
       </div>
 
       {/* 4. TABELA DE VENDAS CORPORATIVAS */}
-      <div className="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mt-4">
+      <div className={`rounded-xl border overflow-hidden mt-4 transition-all duration-300 ${
+        darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-blue-700 shadow-xs'
+      }`}>
         
         {/* Painel Superior: Botões de Controle de Ordenação */}
-        <div className="p-4 bg-gray-800 border-b border-gray-700 flex gap-4 text-xs text-gray-400 items-center">
+        <div className={`p-4 border-b flex gap-4 text-xs items-center transition-colors duration-300 ${
+          darkMode ? 'bg-gray-800 border-gray-700 text-gray-400' : 'bg-gray-50 border-blue-700 text-gray-600'
+        }`}>
           <span className="font-semibold uppercase tracking-wider">Controles de Ordenação:</span>
           
           <button 
             onClick={() => setSortColumn(sortColumn === "date" ? "price" : "date")}
-            className="bg-gray-900 border border-gray-700 px-3 py-1.5 rounded-lg hover:border-gray-500 transition-colors cursor-pointer"
+            className={`px-3 py-1.5 rounded-lg border transition-all cursor-pointer font-medium ${
+              darkMode 
+                ? 'bg-gray-900 border-gray-700 hover:border-gray-500 text-gray-300' 
+                : 'bg-white border-blue-700 hover:bg-indigo-50 text-gray-700'
+            }`}
           >
-            Coluna: <strong className="text-blue-400 uppercase">{sortColumn}</strong>
+            Coluna: <strong className={darkMode ? 'text-blue-400' : 'text-indigo-600'}>{sortColumn.toUpperCase()}</strong>
           </button>
 
           <button 
             onClick={() => setSortDirection(sortDirection === "asc" ? "desc" : "asc")}
-            className="bg-gray-900 border border-gray-700 px-3 py-1.5 rounded-lg hover:border-gray-500 transition-colors cursor-pointer"
+            className={`px-3 py-1.5 rounded-lg border transition-all cursor-pointer font-medium ${
+              darkMode 
+                ? 'bg-gray-900 border-gray-700 hover:border-gray-500 text-gray-300' 
+                : 'bg-white border-blue-700 hover:bg-indigo-50 text-gray-700'
+            }`}
           >
-            Direção: <strong className="text-blue-400 uppercase">{sortDirection}</strong>
+            Direção: <strong className={darkMode ? 'text-blue-400' : 'text-indigo-600'}>{sortDirection.toUpperCase()}</strong>
           </button>
         </div>
 
         {/* Corpo da Tabela HTML */}
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
-            <thead className="bg-gray-900 text-xs text-gray-400 uppercase tracking-wider border-b border-gray-700">
+            <thead className={`text-xs uppercase tracking-wider border-b transition-colors duration-300 ${
+              darkMode ? 'bg-gray-900 border-gray-700 text-gray-400' : 'bg-indigo-50 border-blue-700 text-indigo-900'
+            }`}>
               <tr>
                 <th className="p-4 font-medium">ID Transação</th>
                 <th className="p-4 font-medium">Cliente</th>
@@ -342,24 +386,32 @@ function App() {
                 <th className="p-4 font-medium">Valor</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-700">
+            <tbody className={`divide-y transition-colors duration-300 ${darkMode ? 'divide-gray-700' : 'divide-blue-700'}`}>
               {dataOrdnadedPage.map((item) => (
-                <tr key={item.id} className="hover:bg-gray-700/30 transition-colors">
-                  <td className="p-4 font-mono text-blue-400 font-medium">{item.id}</td>
+                <tr key={item.id} className={`transition-colors ${
+                  darkMode 
+                    ? 'hover:bg-gray-700/30 text-gray-300' 
+                    : 'hover:bg-indigo-50/40 text-gray-700'
+                }`}>
+                  <td className={`p-4 font-mono font-medium ${darkMode ? 'text-blue-400' : 'text-indigo-600'}`}>{item.id}</td>
                   <td className="p-4">
-                    <div className="font-medium text-white">{item.customer.name}</div>
-                    <div className="text-xs text-gray-400">{item.customer.email}</div>
+                    <div className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{item.customer.name}</div>
+                    <div className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>{item.customer.email}</div>
                   </td>
                   <td className="p-4">
-                    <span className="px-2 py-1 bg-gray-900 border border-gray-700 rounded-md text-xs font-medium text-gray-300">
+                    <span className={`px-2 py-1 border rounded-md text-xs font-medium transition-colors ${
+                      darkMode 
+                        ? 'bg-gray-900 border-gray-700 text-gray-300' 
+                        : 'bg-gray-50 border-indigo-500 text-gray-600'
+                    }`}>
                       {item.category}
                     </span>
                   </td>
-                  <td className="p-4 text-gray-300">{item.product}</td>
-                  <td className="p-4 text-gray-400 text-xs">
-                    {new Date(item.date).toLocaleDateString("pt-BR")}
+                  <td className={`p-4 ${darkMode ? 'text-gray-300' : 'text-gray-800'}`}>{item.product}</td>
+                  <td className={`p-4 text-xs ${darkMode ? 'text-gray-400' : 'text-black-500'}`}>
+                    {new Date(item.date).toLocaleDateString("en-US")}
                   </td>
-                  <td className="p-4 font-semibold text-white">
+                  <td className={`p-4 font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                     ${item.amount.toFixed(2)}
                   </td>
                 </tr>
@@ -369,22 +421,32 @@ function App() {
         </div>
 
         {/* Barra Inferior: Controle de Paginação Visual */}
-        <div className="p-4 bg-gray-900 border-t border-gray-700 flex justify-between items-center text-xs text-gray-400">
+        <div className={`p-4 border-t flex justify-between items-center text-xs transition-colors duration-300 ${
+          darkMode ? 'bg-gray-900 border-gray-700 text-gray-400' : 'bg-gray-50 border-blue-700 text-gray-600'
+        }`}>
           <span>
-            Página <strong>{currentPage}</strong> de <strong>{totalPages || 1}</strong>
+            Página <strong className={darkMode ? 'text-white' : 'text-gray-900'}>{currentPage}</strong> de <strong className={darkMode ? 'text-white' : 'text-gray-900'}>{totalPages || 1}</strong>
           </span>
           <div className="flex gap-2">
             <button
               disabled={currentPage === 1}
               onClick={() => setCurrentPage(prev => prev - 1)}
-              className="bg-gray-800 border border-gray-700 px-3 py-1.5 rounded-lg text-white font-medium hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all cursor-pointer"
+              className={`px-3 py-1.5 rounded-lg border font-medium transition-all duration-150 ${
+                darkMode 
+                  ? "bg-gray-800 border-gray-700 text-white hover:bg-gray-700 disabled:opacity-40" 
+                  : "bg-white border-blue-700 text-gray-700 hover:bg-indigo-50 disabled:opacity-40"
+              } disabled:cursor-not-allowed cursor-pointer`}
             >
               Anterior
             </button>
             <button
               disabled={currentPage === totalPages || totalPages === 0}
               onClick={() => setCurrentPage(prev => prev + 1)}
-              className="bg-gray-800 border border-gray-700 px-3 py-1.5 rounded-lg text-white font-medium hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all cursor-pointer"
+              className={`px-3 py-1.5 rounded-lg border font-medium transition-all duration-150 ${
+                darkMode 
+                  ? "bg-gray-800 border-gray-700 text-white hover:bg-gray-700 disabled:opacity-40" 
+                  : "bg-white border-blue-700 text-gray-700 hover:bg-indigo-50 disabled:opacity-40"
+              } disabled:cursor-not-allowed cursor-pointer`}
             >
               Próximo
             </button>
@@ -397,10 +459,12 @@ function App() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-4">
         
         {/* Card do Gráfico de Categorias */}
-        <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 flex flex-col gap-4">
+        <div className={`p-6 rounded-xl border flex flex-col gap-4 transition-all duration-300 ${
+          darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-blue-700 shadow-xs'
+        }`}>
           <div>
-            <h2 className="text-lg font-bold text-white">Category Distribution</h2>
-            <p className="text-gray-400 text-xs">Faturamento consolidado por categoria de produto</p>
+            <h2 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Category Distribution</h2>
+            <p className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Faturamento consolidado por categoria de produto</p>
           </div>
 
           {/* Container Responsivo do Recharts */}
@@ -408,7 +472,7 @@ function App() {
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
-                  data={rechartCategoryData} // Sua lista de objetos { name, value, fill }
+                  data={rechartCategoryData}
                   cx="50%"
                   cy="50%"
                   innerRadius={60}
@@ -418,42 +482,50 @@ function App() {
                 />
                 
                 <Tooltip 
-                  contentStyle={{ backgroundColor: "#1f2937", borderColor: "#374151", borderRadius: "8px" }}
-                  itemStyle={{ color: "#fff" }}
+                  contentStyle={{ 
+                    backgroundColor: darkMode ? "#1f2937" : "#ffffff", 
+                    borderColor: darkMode ? "#374151" : "#e5e7eb", 
+                    borderRadius: "8px" 
+                  }}
+                  itemStyle={{ color: darkMode ? "#fff" : "#111827" }}
                   formatter={(value) => [`$ ${formatMoney(value)}`]}
                 />
-                <Legend iconType="circle" wrapperStyle={{ fontSize: "12px" }} />
+                <Legend iconType="circle" wrapperStyle={{ fontSize: "12px", color: darkMode ? "#9ca3af" : "#4b5563" }} />
               </PieChart>
             </ResponsiveContainer>
           </div>
         </div>
 
         {/* Card do Gráfico de Tendência de Vendas */}
-        <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 flex flex-col gap-4">
+        <div className={`p-6 rounded-xl border flex flex-col gap-4 transition-all duration-300 ${
+          darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-blue-700 shadow-xs'
+        }`}>
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
-              <h2 className="text-lg font-bold text-white">Sales Trend</h2>
-              <p className="text-gray-400 text-xs">Crescimento de receita acumulada ao longo do tempo</p>
+              <h2 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Sales Trend</h2>
+              <p className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Crescimento de receita acumulada ao longo do tempo</p>
             </div>
             
             {/* Botões de Alternância Dias / Meses */}
-            <div className="flex bg-gray-900 p-1 rounded-lg border border-gray-700 self-end sm:self-auto">
+            <div className={`flex p-1 rounded-lg border transition-colors duration-300 ${
+              darkMode ? 'bg-gray-900 border-gray-700' : 'bg-gray-100 border-blue-700'
+            } self-end sm:self-auto`}>
               <button
                 onClick={() => setTrendPeriod("days")}
-                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all cursor-pointer ${
+                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-150 cursor-pointer ${
                   trendPeriod === "days"
                     ? "bg-blue-600 text-white shadow-sm"
-                    : "text-gray-400 hover:text-white"
+                    : darkMode ? "text-gray-400 hover:text-white" : "text-gray-500 hover:text-gray-900"
                 }`}
               >
                 Days
               </button>
               <button
                 onClick={() => setTrendPeriod("months")}
-                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all cursor-pointer ${
+                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-150 cursor-pointer ${
                   trendPeriod === "months"
                     ? "bg-blue-600 text-white shadow-sm"
-                    : "text-gray-400 hover:text-white"
+                    : darkMode ? "text-gray-400 hover:text-white" : "text-gray-500 hover:text-gray-900"
                 }`}
               >
                 Months
@@ -468,7 +540,6 @@ function App() {
                 data={rechartTrendData}
                 margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
               >
-                {/* Definição do Gradiente Azul Suave sob a Linha */}
                 <defs>
                   <linearGradient id="trendGradient" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="rgb(58, 148, 252)" stopOpacity={0.3} />
@@ -476,37 +547,36 @@ function App() {
                   </linearGradient>
                 </defs>
 
-                {/* Linhas de Grade de Fundo (Apenas Horizontais) */}
-                <CartesianGrid strokeDasharray="3 3" stroke="#374151" vertical={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke={darkMode ? "#374151" : "#e5e7eb"} vertical={false} />
                 
-                {/* Eixo X: Exibe as Labels "DD/MM" ou Mês Abreviado */}
                 <XAxis 
                   dataKey="label" 
-                  stroke="#9ca3af" 
+                  stroke={darkMode ? "#9ca3af" : "#4b5563"} 
                   fontSize={11}
                   tickLine={false}
                   axisLine={false}
                   dy={10}
                 />
                 
-                {/* Eixo Y: Valores Financeiros Formatados */}
                 <YAxis 
-                  stroke="#9ca3af" 
+                  stroke={darkMode ? "#9ca3af" : "#4b5563"} 
                   fontSize={11}
                   tickLine={false}
                   axisLine={false}
                   tickFormatter={(value) => `$${value}`}
                 />
                 
-                {/* Tooltip Customizado para o Tema Dark */}
                 <Tooltip 
-                  contentStyle={{ backgroundColor: "#1f2937", borderColor: "#374151", borderRadius: "8px" }}
-                  itemStyle={{ color: "#fff" }}
-                  labelStyle={{ color: "#9ca3af", fontSize: "12px" }}
+                  contentStyle={{ 
+                    backgroundColor: darkMode ? "#1f2937" : "#ffffff", 
+                    borderColor: darkMode ? "#374151" : "#d1d5db", 
+                    borderRadius: "8px" 
+                  }}
+                  itemStyle={{ color: darkMode ? "#fff" : "#111827" }}
+                  labelStyle={{ color: darkMode ? "#9ca3af" : "#6b7280", fontSize: "12px" }}
                   formatter={(value) => [`$ ${formatMoney(value)}`, "Revenue"]}
                 />
                 
-                {/* A Linha e Área do Gráfico */}
                 <Area
                   type="monotone"
                   dataKey="revenue"
