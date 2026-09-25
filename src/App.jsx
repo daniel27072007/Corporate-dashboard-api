@@ -13,6 +13,7 @@ function App() {
   const [sortColumn, setSortColumn] = useState("date")
   const [sortDirection, setSortDirection] = useState("desc")
   const [trendPeriod, setTrendPeriod] = useState("days")
+  const [darkMode, setDarkMode] = useState(true)
 
   //filtering data
   const dataFiltred = useMemo(() => {
@@ -189,10 +190,37 @@ function App() {
     <div className="min-h-screen bg-gray-900 text-white p-8 flex flex-col gap-6">
       
       {/* 1. CABEÇALHO */}
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight">Sales Dashboard</h1>
-        <p className="text-gray-400 text-sm">Visão geral de performance corporativa</p>
+      <div className="flex justify-between items-center w-full">
+        <div>
+          <h1 className={`text-3xl font-bold tracking-tight transition-colors ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            Sales Dashboard
+          </h1>
+          <p className={`transition-colors ${darkMode ? 'text-gray-400' : 'text-gray-500'} text-sm`}>
+            Visão geral de performance corporativa
+          </p>
+        </div>
+
+        {/* Botão de Alternância Claro/Escuro */}
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className={`p-2.5 rounded-lg border transition-all cursor-pointer flex items-center gap-2 text-sm font-medium ${
+            darkMode
+              ? "bg-gray-800 border-gray-700 text-yellow-400 hover:text-yellow-300"
+              : "bg-white border-gray-200 text-indigo-600 hover:bg-gray-50 shadow-xs"
+          }`}
+        >
+          {darkMode ? (
+            <>
+              <span>☀️</span> Light Mode
+            </>
+          ) : (
+            <>
+              <span>🌙</span> Dark Mode
+            </>
+          )}
+        </button>
       </div>
+
 
       {/* 2. BARRA DE FILTROS (Vamos criar a lógica visual delas no próximo passo) */}
       <div className="bg-gray-800 p-4 rounded-xl border border-gray-700 flex flex-wrap gap-4 w-full">
@@ -437,7 +465,7 @@ function App() {
           <div className="w-full h-64">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart
-                data={rechartTrendData} // Array de objetos { label, revenue } calculado no passo anterior
+                data={rechartTrendData}
                 margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
               >
                 {/* Definição do Gradiente Azul Suave sob a Linha */}
