@@ -63,7 +63,6 @@ function App() {
         </button>
       </div>
 
-
       {/* 2. BARRA DE FILTROS (Vamos criar a lógica visual delas no próximo passo) */}
       <div className={`p-4 rounded-xl border flex flex-wrap gap-4 w-full transition-all ${
         darkMode 
