@@ -12,7 +12,7 @@ function App() {
   const itemsPerPage = 3 
   const [sortColumn, setSortColumn] = useState("date")
   const [sortDirection, setSortDirection] = useState("desc")
-  const [tredPeriod, setTrendPeriod] = useState("days")
+  const [trendPeriod, setTrendPeriod] = useState("days")
 
   //filtering data
   const dataFiltred = useMemo(() => {
@@ -121,41 +121,62 @@ function App() {
     })
   }, [dataFiltred])
 
-  const rechartTrendData = useMemo(() => {
+   const rechartTrendData = useMemo(() => {
     const grouped = dataFiltred.reduce((acumulate, item) => {
-      if(item.status === "refunded") return acumulate
+      if (item.status === "refunded") return acumulate
+      
       const itemDate = new Date(item.date)
-      let groupKey
-      if(tredPeriod === 'days'){
-        groupKey = itemDate.toLocaleDateString("en-US", {day: "2-digit", month: "2-digit"})
-      }
-      if(tredPeriod === 'months'){
-        groupKey = itemDate.toLocaleDateString("en-US", {month: "short", year: "2-digit"})
+      if (isNaN(itemDate.getTime())) return acumulate
+
+      let groupKey = ""
+      if (trendPeriod === 'days') {
+        groupKey = itemDate.toLocaleDateString("en-US", { day: "2-digit", month: "2-digit" })
+      } else {
+        groupKey = itemDate.toLocaleDateString("en-US", { month: "short", year: "2-digit" })
       }
 
-      if(!acumulate[groupKey]){
+      // 1. Se a chave não existir no objeto, começamos ela com 0
+      if (!acumulate[groupKey]) {
         acumulate[groupKey] = 0
       }
-      if(acumulate[groupKey]){
-        acumulate[groupKey] += item.amount
-      }
+      
+      // 2. Somamos o valor da transação diretamente na chave correspondente
+      acumulate[groupKey] += item.amount
+      
+      // 3. RETORNO OBRIGATÓRIO: Retorna o objeto inteiro para a próxima rodada do loop
+      return acumulate
     }, {})
+
     return Object.keys(grouped).map((key) => ({
       label: key,
-      revenue: Number(grouped[key].toFixed(2))
-    })).sort((a,b) => {
+      revenue: Number((grouped[key] || 0).toFixed(2))
+    })).sort((a, b) => {
       if (trendPeriod === "days") {
-        const [dayA, monthA] = a.label.split('/').map(Number);
-        const [dayB, monthB] = b.label.split('/').map(Number);
-        return monthA - monthB || dayA - dayB;
+        const partsA = a.label.split('/')
+        const partsB = b.label.split('/')
+        
+        if (partsA.length < 2 || partsB.length < 2) return 0
+
+        const [monthA, dayA] = partsA.map(Number)
+        const [monthB, dayB] = partsB.map(Number)
+        return monthA - monthB || dayA - dayB
       } else {
-        const monthsOrder = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
-        const mA = monthsOrder.indexOf(a.label.split('/')[0].toLowerCase());
-        const mB = monthsOrder.indexOf(b.label.split('/')[0].toLowerCase());
-        return mA - mB;
+        const partsA = a.label.split('/')
+        const partsB = b.label.split('/')
+
+        if (partsA.length < 2 || partsB.length < 2) return 0
+
+        const monthsOrder = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
+        // Converte a string do mês de forma segura antes de buscar o índice
+        const mA = monthsOrder.indexOf(partsA[0].toLowerCase())
+        const mB = monthsOrder.indexOf(partsB[0].toLowerCase())
+        const yearA = parseInt(partsA[1]) || 0
+        const yearB = parseInt(partsB[1]) || 0
+
+        return yearA - yearB || mA - mB
       }
     })
-  }, [dataFiltred, tredPeriod])
+  }, [dataFiltred, trendPeriod])
 
   const formatMoney = (value) => {
     return new Intl.NumberFormat('pt-BR', {
@@ -379,9 +400,96 @@ function App() {
           </div>
         </div>
 
-        {/* Espaço para o segundo gráfico solicitado pelo cliente futuramente */}
-        <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 flex items-center justify-center border-dashed text-gray-500 text-sm italic">
-          Sales Trend Chart (Gráfico de Tendência Temporal) ficará aqui.
+        {/* Card do Gráfico de Tendência de Vendas */}
+        <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 flex flex-col gap-4">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div>
+              <h2 className="text-lg font-bold text-white">Sales Trend</h2>
+              <p className="text-gray-400 text-xs">Crescimento de receita acumulada ao longo do tempo</p>
+            </div>
+            
+            {/* Botões de Alternância Dias / Meses */}
+            <div className="flex bg-gray-900 p-1 rounded-lg border border-gray-700 self-end sm:self-auto">
+              <button
+                onClick={() => setTrendPeriod("days")}
+                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all cursor-pointer ${
+                  trendPeriod === "days"
+                    ? "bg-blue-600 text-white shadow-sm"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              >
+                Days
+              </button>
+              <button
+                onClick={() => setTrendPeriod("months")}
+                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all cursor-pointer ${
+                  trendPeriod === "months"
+                    ? "bg-blue-600 text-white shadow-sm"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              >
+                Months
+              </button>
+            </div>
+          </div>
+
+          {/* Container do Gráfico do Recharts */}
+          <div className="w-full h-64">
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart
+                data={rechartTrendData} // Array de objetos { label, revenue } calculado no passo anterior
+                margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+              >
+                {/* Definição do Gradiente Azul Suave sob a Linha */}
+                <defs>
+                  <linearGradient id="trendGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="rgb(58, 148, 252)" stopOpacity={0.3} />
+                    <stop offset="95%" stopColor="rgb(58, 148, 252)" stopOpacity={0} />
+                  </linearGradient>
+                </defs>
+
+                {/* Linhas de Grade de Fundo (Apenas Horizontais) */}
+                <CartesianGrid strokeDasharray="3 3" stroke="#374151" vertical={false} />
+                
+                {/* Eixo X: Exibe as Labels "DD/MM" ou Mês Abreviado */}
+                <XAxis 
+                  dataKey="label" 
+                  stroke="#9ca3af" 
+                  fontSize={11}
+                  tickLine={false}
+                  axisLine={false}
+                  dy={10}
+                />
+                
+                {/* Eixo Y: Valores Financeiros Formatados */}
+                <YAxis 
+                  stroke="#9ca3af" 
+                  fontSize={11}
+                  tickLine={false}
+                  axisLine={false}
+                  tickFormatter={(value) => `$${value}`}
+                />
+                
+                {/* Tooltip Customizado para o Tema Dark */}
+                <Tooltip 
+                  contentStyle={{ backgroundColor: "#1f2937", borderColor: "#374151", borderRadius: "8px" }}
+                  itemStyle={{ color: "#fff" }}
+                  labelStyle={{ color: "#9ca3af", fontSize: "12px" }}
+                  formatter={(value) => [`$ ${formatMoney(value)}`, "Revenue"]}
+                />
+                
+                {/* A Linha e Área do Gráfico */}
+                <Area
+                  type="monotone"
+                  dataKey="revenue"
+                  stroke="rgb(58, 148, 252)"
+                  strokeWidth={2}
+                  fillOpacity={1}
+                  fill="url(#trendGradient)"
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
         </div>
 
       </div>
