@@ -1,5 +1,5 @@
 import { useState, useMemo, use } from "react";
-import { ResponsiveContainer, PieChart, Pie, Tooltip, Legend } from 'recharts'
+import { ResponsiveContainer, PieChart, Pie, Tooltip, Legend, AreaChart, Area, XAxis, YAxis, CartesianGrid } from 'recharts'
 import salesData from './data/salesMock.json'
 
 function App() {
@@ -7,12 +7,12 @@ function App() {
   const [categorySelected, setCategorySelected] = useState("all")
   const [dateFirst, setDateFirst] = useState("")
   const [dateLast, setDateLast] = useState("")
-  // () => new Date().toLocaleDateString('sv-SE')
 
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 3 
   const [sortColumn, setSortColumn] = useState("date")
   const [sortDirection, setSortDirection] = useState("desc")
+  const [tredPeriod, setTrendPeriod] = useState("days")
 
   //filtering data
   const dataFiltred = useMemo(() => {
@@ -120,6 +120,42 @@ function App() {
       }
     })
   }, [dataFiltred])
+
+  const rechartTrendData = useMemo(() => {
+    const grouped = dataFiltred.reduce((acumulate, item) => {
+      if(item.status === "refunded") return acumulate
+      const itemDate = new Date(item.date)
+      let groupKey
+      if(tredPeriod === 'days'){
+        groupKey = itemDate.toLocaleDateString("en-US", {day: "2-digit", month: "2-digit"})
+      }
+      if(tredPeriod === 'months'){
+        groupKey = itemDate.toLocaleDateString("en-US", {month: "short", year: "2-digit"})
+      }
+
+      if(!acumulate[groupKey]){
+        acumulate[groupKey] = 0
+      }
+      if(acumulate[groupKey]){
+        acumulate[groupKey] += item.amount
+      }
+    }, {})
+    return Object.keys(grouped).map((key) => ({
+      label: key,
+      revenue: Number(grouped[key].toFixed(2))
+    })).sort((a,b) => {
+      if (trendPeriod === "days") {
+        const [dayA, monthA] = a.label.split('/').map(Number);
+        const [dayB, monthB] = b.label.split('/').map(Number);
+        return monthA - monthB || dayA - dayB;
+      } else {
+        const monthsOrder = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+        const mA = monthsOrder.indexOf(a.label.split('/')[0].toLowerCase());
+        const mB = monthsOrder.indexOf(b.label.split('/')[0].toLowerCase());
+        return mA - mB;
+      }
+    })
+  }, [dataFiltred, tredPeriod])
 
   const formatMoney = (value) => {
     return new Intl.NumberFormat('pt-BR', {
