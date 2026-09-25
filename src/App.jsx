@@ -1,6 +1,7 @@
 import { useState, useMemo, use } from "react";
 import { ResponsiveContainer, PieChart, Pie, Tooltip, Legend, AreaChart, Area, XAxis, YAxis, CartesianGrid } from 'recharts'
 import salesData from './data/salesMock.json'
+import formatMoney from "./utils/formatMoney";
 
 function App() {
   const [searchText, setSearchText] = useState("")
@@ -12,7 +13,7 @@ function App() {
   const itemsPerPage = 3 
   const [sortColumn, setSortColumn] = useState("date")
   const [sortDirection, setSortDirection] = useState("desc")
-  const [trendPeriod, setTrendPeriod] = useState("days")
+  const [trendPeriod, setTrendPeriod] = useState("months")
   const [darkMode, setDarkMode] = useState(true)
 
   //filtering data
@@ -177,14 +178,7 @@ function App() {
         return yearA - yearB || mA - mB
       }
     })
-  }, [dataFiltred, trendPeriod])
-
-  const formatMoney = (value) => {
-    return new Intl.NumberFormat('pt-BR', {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    }).format(value);
-  };  
+  }, [dataFiltred, trendPeriod]) 
 
   return (
     <div className={`min-h-screen p-8 flex flex-col gap-6 transition-colors duration-300 ${
