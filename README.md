@@ -16,6 +16,9 @@ In fast-paced corporate environments, business decision-makers and sales teams s
 ## The Solution
 This project provides a highly responsive, single-page corporate dashboard driven by a custom React architecture. It abstracts all state manipulation, dynamic metrics calculation, and filter pipelines into a dedicated custom hook (`useSalesDashboard`), serving a clean, modern UI styled with Tailwind CSS v4 and Recharts.
 
+![Dashboard Preview - Dark Mode](./src/assets/dashboard-preview.png)
+![Dashboard Preview - Light Mode](./src/assets/dashboard-preview1.png)
+
 ### What this tool automatically handles for you:
 *   **Decoupled Architecture (`useSalesDashboard` Custom Hook):** Isolates state management, dynamic filtering algorithms, pagination, and multi-column sorting from the presentation layer (`App.jsx`).
 *   **Real-Time Multidimensional Filtering:** Seamlessly combines live text queries (by client name), category dropdowns, and custom date range filters (`dateFirst` / `dateLast`).
